@@ -36,7 +36,7 @@ def main(args):
     loader = DataLoader(Data, batch_size=args.batch_size, shuffle=False, num_workers=5)
 
     model = Model(args).to(device)
-    model.load_state_dict(torch.load('./res/model.pkl'))
+     model.load_state_dict(torch.load('./res/model'+args.file_name+'.pkl'))
 
     s_emb_list = []
     t_emb_list = []
@@ -103,7 +103,7 @@ def main(args):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-
+    parser.add_argument('--file_name', type=str, default='saved')
     parser.add_argument('--file_path', type=str, default='./data/emb_edges.pt')
     parser.add_argument('--node_feature_path', type=str, default='./data/sorted_emb_feat.pt')
     parser.add_argument('--neg_size', type=int, default=1)
