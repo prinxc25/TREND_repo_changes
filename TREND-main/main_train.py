@@ -64,7 +64,7 @@ def main(args):
 
         print('ep_{}_event_loss:'.format(j + 1), loss)
 
-    torch.save(model.state_dict(), './res/model'+args.file_name+str(args.epoch_num)+'.pkl')
+    torch.save(model.state_dict(), './res/model'+args.file_name+str(args.epoch_num)+'.pth')
 
 
 if __name__ == '__main__':
