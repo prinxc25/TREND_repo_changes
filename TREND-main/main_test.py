@@ -36,7 +36,7 @@ def main(args):
     loader = DataLoader(Data, batch_size=args.batch_size, shuffle=False, num_workers=5)
 
     model = Model(args).to(device)
-    model.load_state_dict(torch.load('./res/model'+args.file_name+str(args.epoch_num)+'.pkl'))
+    model.load_state_dict(torch.load('./res/model'+args.file_name+str(args.epoch_num)+'.pth'))
 
     s_emb_list = []
     t_emb_list = []
