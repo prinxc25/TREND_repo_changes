@@ -64,12 +64,12 @@ def main(args):
 
         print('ep_{}_event_loss:'.format(j + 1), loss)
 
-    torch.save(model.state_dict(), './res/model.pkl')
+    torch.save(model.state_dict(), './res/model'+args.file_name+'.pth')
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-
+    parser.add_argument('--file_name', type=str, default='saved')
     parser.add_argument('--file_path', type=str, default='./data/emb_edges.pt')
     parser.add_argument('--node_feature_path', type=str, default='./data/sorted_emb_feat.pt')
     parser.add_argument('--neg_size', type=int, default=1)
