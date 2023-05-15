@@ -12,7 +12,9 @@ from data_dyn_cite import DataHelper
 from torch.utils.data import DataLoader
 from model import Model
 
-device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+print('Using device:', device)
+print()
 FType = torch.FloatTensor
 LType = torch.LongTensor
 
